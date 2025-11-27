@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.loginField {
+  border-radius: 16px !important;
+
+  input {
+    height: 31px !important;
+  }
+}
+
+#billingTable {
+  th {
+    box-shadow: none !important;
+    border-radius: 0px;
+    border: 1px solid #eee;
+  }
+
+  td {
+    border: 1px solid #eee;
+  }
+}
