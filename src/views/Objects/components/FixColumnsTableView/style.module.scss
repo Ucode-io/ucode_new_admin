@@ -1,0 +1,36 @@
+.moreButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // width: 32px;
+  // height: 32px;
+  background: #fff;
+  border: 0;
+  cursor: pointer;
+  // border-left: 1px solid #eee;
+  padding-left: 5px;
+  color: #a8a8a8;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.menuBar {
+  width: 180px;
+}
+
+.menuItems{
+  padding: 10px 14px;
+  min-width: 200px;
+  .menuItem{
+    padding: 6px 0;
+    // border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

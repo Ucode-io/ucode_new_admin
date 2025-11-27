@@ -1,0 +1,61 @@
+.wrapper {
+  width: 100%;
+  position: relative;
+  // border: 1px solid #ddd;
+  border-radius: 2px;
+  .downIcon {
+    position: absolute;
+    bottom: 7px;
+    right: 16px;
+  }
+  .popover {
+    background-color: #fff;
+    border-radius: 2px;
+    position: absolute;
+    // top: 34px;
+    left: 0;
+    width: 100%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    z-index: 100;
+  }
+  .values {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    .value {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      border: 1px solid #ddd;
+      border-radius: 2px;
+      padding: 2px;
+      min-width: fit-content;
+      width: fit-content;
+      padding-right: 5px;
+    }
+  }
+  .searchInput {
+    border: 1px solid #ddd;
+    padding: 7px 8px;
+    border-radius: 2px;
+    width: 100%;
+    margin-top: 4px;
+    padding-right: 40px;
+    &:hover {
+      border-color: #333;
+    }
+  }
+}
+.items {
+  max-height: 500px;
+  height: fit-content;
+  overflow-y: scroll;
+  .item {
+    padding: 4px 8px;
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(192, 192, 192, 0.2235294118);
+    }
+  }
+}

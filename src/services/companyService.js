@@ -1,3 +1,4 @@
+import { useMutation, useQuery } from "react-query";
 import request from "../utils/request";
 import requestAuth from "../utils/requestAuth";
 import requestAuthV2 from "../utils/requestAuthV2";
@@ -7,14 +8,6 @@ const companyService = {
     return request.get(`/company`, {
       params,
     });
-  },
-  getCompaniesList: (params) => {
-    return request.get(`/companies`, {
-      params,
-    });
-  },
-  getCompanyData: (id) => {
-    return request.get(`companies/${id}/projects`);
   },
   register: (data) => requestAuth.post(`/company`, data),
   getCompanyList: (data) =>
@@ -43,6 +36,67 @@ const companyService = {
       },
     }),
   delete: (id) => request.delete(`/company/${id}`),
+};
+
+export const useRegisterCompanyMutation = (mutationSettings) => {
+  return useMutation((data) => companyService.register(data), mutationSettings);
+};
+
+export const useCompanyListQuery = ({ params = {}, queryParams } = {}) => {
+  return useQuery(
+    ["COMPANY", params],
+    () => {
+      return companyService.getList(params);
+    },
+    queryParams
+  );
+};
+export const useProjectListQuery = ({ params = {}, queryParams } = {}) => {
+  return useQuery(
+    ["PROJECT", params],
+    () => {
+      return companyService.getProjectList(params);
+    },
+    queryParams
+  );
+};
+export const useEnvironmentListQuery = ({ params = {}, queryParams } = {}) => {
+  return useQuery(
+    ["ENVIRONMENT", params],
+    () => {
+      return companyService.getEnvironmentList(params);
+    },
+    queryParams
+  );
+};
+
+export const useCompanyGetByIdQuery = ({
+  companyId,
+  params = {},
+  queryParams,
+}) => {
+  return useQuery(
+    ["COMPANY_GET_BY_ID", { ...params, companyId }],
+    () => {
+      return companyService.getByID(params, companyId);
+    },
+    queryParams
+  );
+};
+
+export const useCompanyUpdateMutation = (mutationSettings, company_id) => {
+  return useMutation(
+    (data) => companyService.update(data, company_id),
+    mutationSettings
+  );
+};
+
+export const useCompanyCreateMutation = (mutationSettings) => {
+  return useMutation((data) => companyService.create(data), mutationSettings);
+};
+
+export const useCompanyDeleteMutation = (mutationSettings) => {
+  return useMutation((id) => companyService.delete(id), mutationSettings);
 };
 
 export default companyService;

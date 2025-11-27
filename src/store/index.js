@@ -1,14 +1,7 @@
-import {configureStore} from "@reduxjs/toolkit";
-import {
-  FLUSH,
-  PAUSE,
-  PERSIST,
-  PURGE,
-  REGISTER,
-  REHYDRATE,
-  persistStore,
-} from "redux-persist";
+import { configureStore } from "@reduxjs/toolkit";
+import { FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE, persistStore } from "redux-persist";
 import rootReducer from "./rootReducer";
+
 
 export const store = configureStore({
   reducer: rootReducer,

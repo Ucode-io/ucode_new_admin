@@ -14,7 +14,7 @@ export const {actions: mainActions, reducer: mainReducer} = createSlice({
     setPinIsEnabled: (state, {payload}) => {
       state.pinIsEnabled = payload;
     },
-    setSubMenuIsOpen: (state, {payload}) => {
+    setSubMenuIsOpen: (state, { payload }) => {
       state.subMenuIsOpen = payload;
     },
   },

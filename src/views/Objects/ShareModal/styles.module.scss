@@ -1,0 +1,124 @@
+.checkBox {
+  display: flex;
+  align-items: center;
+
+  p {
+    font-weight: 600;
+  }
+
+  span {
+    padding: 5px 5px 5px 0 !important;
+    margin: 0 !important;
+    width: 100%;
+
+    svg {
+      font-size: 20px;
+    }
+
+  }
+}
+
+.shareHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding: 15px;
+}
+
+.collapse {
+  // border: 1px solid #eee;
+  cursor: pointer;
+  border-top: 0px;
+
+  h2 {
+    font-size: 14px;
+  }
+}
+
+.collapseCon {
+  border: 1px solid #eee;
+  border-top: 0px;
+  cursor: pointer;
+
+  h2 {
+    font-size: 14px;
+  }
+}
+
+.submitBtn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.dialog {
+  &::-webkit-scrollbar {
+    width: 40px;
+  }
+}
+
+.shareContentBody {
+  height: 400px;
+  width: 600px;
+  overflow-y: scroll;
+
+  ul {
+    border-bottom: none !important;
+    padding: 0 15px;
+    position: sticky;
+    top: -1px;
+    z-index: 9999;
+    background: #fff;
+  }
+}
+
+.shareFooter {
+  padding: 15px 15px;
+  border-top: 1px solid #eee;
+
+  button {
+    margin: 0 10px;
+    font-size: 15px;
+    font-weight: 400;
+  }
+}
+
+.permissionList {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+
+  .permissionListTitle {
+    font-size: 12px;
+    font-weight: 400;
+  }
+
+  .permissionListContent {
+    display: flex;
+    width: 160px;
+  }
+
+  .permissionListContentCon {
+    display: flex;
+    width: 400px;
+  }
+
+  .permissionListItem {
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 5px;
+  }
+
+  .permissionListItemCon {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 5px;
+  }
+}

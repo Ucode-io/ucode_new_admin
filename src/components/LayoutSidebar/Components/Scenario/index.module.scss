@@ -1,0 +1,135 @@
+$sidebar-width: 300px;
+// $footer-height: 36px;
+$footer-height: 0px;
+$navbar-height: 48px;
+
+.drawer .MuiBackdrop-root .MuiModal-backdrop {
+  background: none;
+}
+
+.Flow {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  background-color: #E5E5E5;
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.5s;
+  margin-top: -2px;
+  overflow: hidden;
+  // position: fixed;
+
+
+  #box_middle {
+    width: calc(100% - $sidebar-width);
+    z-index: 99;
+
+    .react-flow__renderer {
+      z-index: 99 !important;
+    }
+  }
+
+
+  #box {
+    width: 100%;
+
+  }
+
+  .box_middle_close {
+    width: 100% !important;
+    transition: all 0.3s;
+    z-index: 99;
+
+    .react-flow__renderer {
+      z-index: 99 !important;
+    }
+
+  }
+
+  #box_right {
+    width: $sidebar-width;
+    background-color: #fff;
+    height: 100%;
+    overflow: auto;
+  }
+
+
+
+}
+
+.tabs {
+  max-width: 0;
+  background: #fff;
+  border-bottom: none;
+  transition: 0.5s;
+  margin-top: -46px;
+  overflow: hidden;
+  position: fixed;
+}
+
+.tabswithtoggle {
+  max-width: 300px;
+  background: #fff;
+  border-bottom: none;
+  transition: 0.5s;
+  margin-top: -46px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+}
+
+.tab {
+  width: 150px;
+  height: 47px;
+  border-radius: 0;
+  border-top: 0;
+  padding: 0;
+  color: #007AFF;
+  margin: 0;
+  border: 0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &::marker {
+    color: #fff;
+  }
+}
+
+.panel {
+  height: 100vh;
+}
+
+.runpanel {
+  height: 100vh;
+}
+
+.select {
+
+
+  div {
+    border-radius: 6px;
+  }
+
+}
+
+.closeClass {
+  // width: 0px !important;
+  transform: translateX($sidebar-width);
+  width: 0px !important;
+  transition: all 0.5s;
+  padding: 0px !important;
+
+}
+
+
+.scenariosTabs {
+  background: #fff;
+  display: flex;
+}

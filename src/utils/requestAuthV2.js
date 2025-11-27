@@ -9,22 +9,27 @@ const requestAuthV2 = axios.create({
 });
 
 const errorHandler = (error, hooks) => {
+  const isOnline = store.getState().isOnline;
   if (error?.response) {
     if (error.response?.data?.data) {
-      store.dispatch(
-        showAlert(
-          error.response.data.data?.replace(
-            "rpc error: code = InvalidArgument desc = ",
-            ""
+      isOnline?.isOnline &&
+        store.dispatch(
+          showAlert(
+            error.response.data.data?.replace(
+              "rpc error: code = InvalidArgument desc = ",
+              ""
+            )
           )
-        )
-      );
+        );
     }
 
     if (error?.response?.status === 403) {
     } else if (error?.response?.status === 401) {
+      // store.dispatch(logout())
     }
-  } else store.dispatch(showAlert("No connection to the server, try again"));
+  }
+  // isOnline?.isOnline &&
+  else store.dispatch(showAlert("No connection to the server, try again"));
 
   return Promise.reject(error.response);
 };
@@ -35,8 +40,8 @@ requestAuthV2.interceptors.request.use(
     const token = authStore.token;
     const resourceId = authStore.resourceId;
     const companyStore = store.getState().company;
-    const environmentId = companyStore?.environmentId;
-    const projectId = companyStore?.projectId;
+    const environmentId = companyStore.environmentId;
+    const projectId = companyStore.projectId;
 
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;

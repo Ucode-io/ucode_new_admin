@@ -1,0 +1,19 @@
+
+
+.PDF-viewer {
+  
+
+  .rpv-default-layout__container {
+    border: none;
+  }
+
+  .rpv-default-layout__toolbar {
+    background-color: white;
+    border-color: #E9ECF0;
+  }
+
+  .rpv-default-layout__sidebar {
+    background-color: white;
+    display: none !important;
+  }
+}

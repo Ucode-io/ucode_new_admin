@@ -1,10 +1,9 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
-
+import authService from "../../services/auth/authService";
 import {authActions} from "./auth.slice";
 import {store} from "..";
-import {permissionsActions} from "../permissions/permissions.slice";
-import authService from "../../services/auth/authService";
 import {companyActions} from "../company/company.slice";
+import {permissionsActions} from "../permissions/permissions.slice";
 
 export const loginAction = createAsyncThunk(
   "auth/login",
@@ -16,7 +15,6 @@ export const loginAction = createAsyncThunk(
           ...res,
           project_id: data.project_id,
           environment_ids: data?.environment_ids,
-          currencies: data?.currencies,
         })
       );
       dispatch(companyActions.setCompanyId(res?.user?.company_id));
@@ -37,8 +35,18 @@ export const loginAction = createAsyncThunk(
         .catch((err) => {
           console.log(err);
         });
+      const fcmToken = localStorage.getItem("fcmToken");
+      if (res.user.id)
+        await authService.sendFcmToken({
+          token: fcmToken,
+          user_id: res.user.id,
+          platform_id: "ANDROID",
+        });
+
+      // dispatch(cashboxActions.setData(cashboxData))
     } catch (error) {
       throw new Error(error);
+      // dispatch(showAlert('Username or password is incorrect'))
     }
   }
 );

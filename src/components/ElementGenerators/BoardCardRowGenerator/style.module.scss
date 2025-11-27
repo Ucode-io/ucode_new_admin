@@ -1,0 +1,25 @@
+.row {
+  padding: 0 12px;
+
+  &:first-child {
+    padding-top: 12px;
+  }
+
+  &:last-child {
+    padding-bottom: 12px;
+  }
+
+  .label {
+    font-weight: bold;
+  }
+
+  .image {
+    border-radius: 6px;
+  }
+}
+
+.photorow {
+  .label {
+    font-weight: bold;
+  }
+}

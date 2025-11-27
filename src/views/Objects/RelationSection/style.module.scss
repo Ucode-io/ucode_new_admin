@@ -1,0 +1,148 @@
+@use "/src/scss/colors";
+
+.card {
+  border-radius: 0;
+  // border-left: 1px solid #e5e9eb;
+  height: 100%;
+  width: 100%;
+
+  .cardHeader {
+    // height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    // border-bottom: 1px solid #e5e9eb;
+  }
+
+  .tabList {
+    width: calc(100% - 200px);
+    overflow-x: scroll;
+    display: flex;
+    align-items: center;
+  }
+
+  .tabs_item {
+    border-radius: 4px;
+    cursor: pointer;
+    // min-width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 10px;
+  }
+
+  .cardBody {
+    padding: 12px;
+  }
+}
+
+.relationTable {
+  display: flex;
+
+  .filtersBlock {
+    padding: 12px;
+    // border-right: 1px solid #e5e9eb;
+    width: 210px;
+  }
+
+  .tableBlock {
+    // padding: 12px;
+    flex: 1;
+    overflow: auto;
+  }
+}
+
+.moreButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // width: 32px;
+  // height: 32px;
+  background: #fff;
+  border: 0;
+  cursor: pointer;
+  // border-left: 1px solid #eee;
+  padding-left: 5px;
+  color: #a8a8a8;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.menuBar {
+  width: 180px;
+}
+
+.menuItems {
+  padding: 10px 14px;
+  min-width: 200px;
+
+  .menuItem {
+    padding: 6px 0;
+    // border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.moreButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #fff;
+  border: 0px solid rgb(221, 217, 217);
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.element {
+  border: 1px solid #e5e9eb;
+  border-radius: 4px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 0.2s;
+  &.active {
+    color: colors.$primary;
+    background-color: #fff;
+    border-bottom: 1px solid #fff;
+    border-top: 2px solid #0e73f6;
+  }
+}
+
+.menuBar {
+  width: 180px;
+}
+
+.template {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  padding: 5px 10px;
+  cursor: pointer;
+
+  span {
+    margin-left: 10px;
+  }
+}

@@ -1,0 +1,114 @@
+.wrapper {
+  background-color: #fff;
+  overflow: auto;
+
+  .actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 4px;
+    width: fit-content;
+    margin-left: auto;
+  }
+  .filters {
+    padding: 8px;
+    border-right: 1px solid #e3e3e3;
+    p {
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+  }
+  .table_box {
+    width: calc(100vw - 254px);
+  }
+}
+.plus_action {
+  font-size: 18px;
+  margin: 0 4px;
+  line-height: 14px;
+  vertical-align: middle;
+}
+
+.rowLoader {
+  width: 100%;
+  border-right: 1px solid #e5e9e5;
+}
+.errorWrapper {
+  border-top: 1px solid #e3e3e3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  height: calc(100vh - 125px);
+  font-size: 24px;
+  font-weight: 500;
+  padding: 16px;
+  text-align: center;
+  p {
+    width: 50%;
+  }
+}
+.clickActions {
+  width: calc(100vw - 56px);
+  overflow-x: scroll;
+
+  display: flex;
+  .item {
+    padding: 8px;
+    border-right: 1px solid #e3e3e3;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    span {
+      font-weight: 500;
+      white-space: nowrap;
+      font-size: 12px;
+    }
+    &.active {
+      background-color: #e4fbff;
+      span {
+        font-weight: 700;
+      }
+    }
+  }
+}
+.rowsRelation {
+  border: 1px solid #e3e3e3;
+  border-radius: 2px;
+  padding: 4px 4px 0;
+  margin-bottom: 4px;
+  p {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+}
+.clcActRow {
+  border: 1px solid #e3e3e3;
+  border-radius: 2px;
+  padding: 4px 4px 0;
+
+  .clActRowItem {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    div {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  .clcActfield {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    padding: 6px 30px;
+    user-select: none;
+    &:hover,
+    &:focus {
+      font-weight: 700;
+    }
+  }
+}

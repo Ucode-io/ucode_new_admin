@@ -1,56 +1,41 @@
-import {Suspense} from "react";
-import Router from "./router";
-import {BrowserRouter} from "react-router-dom";
-import {ThemeProvider, createTheme, CssBaseline} from "@mui/material";
-import {StyledEngineProvider} from "@mui/material/styles";
-import {PersistGate} from "redux-persist/integration/react";
-import {persistor, store} from "./store";
 import {Provider} from "react-redux";
+import {BrowserRouter} from "react-router-dom";
+import {PersistGate} from "redux-persist/integration/react";
+import AlertProvider from "./providers/AlertProvider";
+import GlobalFunctionsProvider from "./providers/GlobalFunctionsProvider";
+import MaterialUIProvider from "./providers/MaterialUIProvider";
+import Router from "./router";
+import {persistor, store} from "./store";
+import "./i18next";
+import {Suspense} from "react";
 import {QueryClientProvider} from "react-query";
 import queryClient from "./queries";
-import AlertProvider from "./providers/AlertProvider";
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#2563eb",
-    },
-    secondary: {
-      main: "#7c3aed",
-    },
-  },
-  components: {
-    MuiCssBaseline: {
-      styleOverrides: {
-        body: {
-          margin: 0,
-          padding: 0,
-        },
-      },
-    },
-  },
-});
+import {ReactQueryDevtools} from "react-query/devtools";
+import {AliveScope} from "react-activation";
 
 function App() {
   return (
-    <StyledEngineProvider injectFirst>
-      <Suspense fallback="Loading...">
+    <Suspense fallback="Loading...">
+      <div className="App">
         <QueryClientProvider client={queryClient}>
+          <ReactQueryDevtools initialIsOpen={false} />
           <Provider store={store}>
             <PersistGate persistor={persistor}>
-              <ThemeProvider theme={theme}>
-                <CssBaseline />
+              <MaterialUIProvider>
                 <AlertProvider>
+                  <GlobalFunctionsProvider />
                   <BrowserRouter>
-                    <Router />
+                    <AliveScope>
+                      <Router />
+                    </AliveScope>
                   </BrowserRouter>
                 </AlertProvider>
-              </ThemeProvider>
+              </MaterialUIProvider>
             </PersistGate>
           </Provider>
         </QueryClientProvider>
-      </Suspense>
-    </StyledEngineProvider>
+      </div>
+    </Suspense>
   );
 }
 

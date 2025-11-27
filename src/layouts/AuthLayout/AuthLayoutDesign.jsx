@@ -1,39 +1,72 @@
-import React from "react";
-import styles from "./styles.module.scss";
 import {Outlet} from "react-router-dom";
-import {Box, Typography} from "@mui/material";
+import styles from "./styles.module.scss"
+import config from "../../../builder_config/config.json";
+import {useLoginMicrofrontendQuery} from "../../services/loginMicrofrontendService";
+import RingLoaderWithWrapper from "../../components/Loaders/RingLoader/RingLoaderWithWrapper";
+import Microfrontend from "../../views/Microfrontend";
+import MicrofrontendComponent from "../../components/MicrofrontendComponent";
+import {useDispatch, useSelector} from "react-redux";
+import {store} from "../../store";
+import {loginAction} from "../../store/auth/auth.thunk";
+import LanguageSelector from "../../components/LanguageSelector";
 
-function AuthLayoutDesign() {
+const AuthLayoutDesign = () => {
+  const isAuth = useSelector((state) => state.auth.isAuth);
+  const subdomain =
+    window.location.hostname === "localhost"
+      ? "ett.u-code.io"
+      : window.location.hostname;
+
+  const {data, isLoading} = useLoginMicrofrontendQuery({
+    params: {
+      subdomain,
+      enabled: Boolean(!isAuth),
+    },
+  });
+
+  const dispatch = useDispatch();
+
+  const microfrontendUrl = data?.function?.url;
+  const microfrontendLink = microfrontendUrl
+    ? `https://${microfrontendUrl}/assets/remoteEntry.js`
+    : undefined;
+
+  if (isLoading) return <RingLoaderWithWrapper style={{height: "100vh"}} />;
+
+  if (microfrontendUrl && window.location.hostname !== "localhost")
+    return (
+      <>
+        <MicrofrontendComponent
+          loginAction={(authData) => dispatch(loginAction(authData))}
+          key={microfrontendLink}
+          link={microfrontendLink}
+        />
+        <Outlet />
+      </>
+    );
+
   return (
-    <div className={styles.layout} style={{margin: 0, padding: 0}}>
+    <div className={styles.layout}>
       <div className={styles.leftSide}>
-        <Box
-          sx={{
-            backgroundColor: "#ffffff",
-            borderRadius: "12px",
-            padding: "40px",
-            boxShadow: "0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06)",
-          }}>
-          <Box sx={{textAlign: "left", marginBottom: "32px"}}>
-            <Typography
-              variant="h4"
-              sx={{
-                fontWeight: 700,
-                color: "#0f172a",
-                fontSize: "26px",
-                lineHeight: 1.2,
-              }}>
-              Sign in to your account
-            </Typography>
-          </Box>
-
-          <div>
-            <Outlet />
+        <div></div>
+        <div className={styles.logoBlock}>
+          <h1 className={styles.logoTitle}>{config?.company_name}</h1>
+          <div style={{ marginLeft: "auto" }}>
+            <LanguageSelector />
           </div>
-        </Box>
+        </div>
+
+
       </div>
+      <div className={styles.outlet}>
+        <Outlet />
+      </div>
+
+
+      <div className={styles.footerImage}></div>
+
     </div>
   );
-}
+};
 
 export default AuthLayoutDesign;

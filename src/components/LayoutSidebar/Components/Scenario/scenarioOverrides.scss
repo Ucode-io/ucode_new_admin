@@ -1,0 +1,154 @@
+.query_node-sidebar,
+.function_node-sidebar {
+    width: 100%;
+    max-width: 300px;
+
+    .query_node-title {
+        // padding: 13px 19px;
+        margin-top: 6px;
+        color: #000;
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    .chakra-text {
+        color: #000 !important;
+    }
+
+    svg {
+        color: #000;
+    }
+
+    .css-r6z5ec {
+        z-index: 99999;
+    }
+
+    .query_node_sidebar-header {
+        padding: 12px;
+    }
+
+    .function_node_sidebar-header {
+        padding: 0 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid #e5e5e5;
+        border-bottom: 1px solid #e5e5e5;
+
+        .function_node-title {
+            color: #000;
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+
+    ._divider_1ic1j_33 {
+        height: 1px;
+        width: 100%;
+        position: absolute;
+        bottom: 0px;
+        background-color: #e5e5e5;
+    }
+}
+
+.input_with-popup {
+    width: 140px;
+}
+
+.function_node-form {
+    fieldset {
+        box-shadow: none !important;
+        outline: none;
+        border: none;
+    }
+}
+
+.condition_input {
+    fieldset {
+        box-shadow: none !important;
+        outline: none;
+        border: none;
+    }
+}
+
+.condition_select {
+    width: 100%;
+    border-right: 1px solid #E2E8F0 !important;
+    border-left: 1px solid #E2E8F0 !important;
+    border-radius: 0;
+
+    div {
+        border: none;
+    }
+
+    fieldset {
+        box-shadow: none !important;
+        outline: none;
+        border: none;
+    }
+
+}
+
+.node_drawer-content {
+    top: 48px !important;
+    width: 100% !important;
+    border-top: 1px solid #EEF1F6;
+    box-shadow: none !important;
+    max-width: 300px !important;
+}
+
+.react-flow__edge-path {
+    stroke: red;
+    stroke-width: 3px;
+}
+
+.react-flow__connectionline {
+    stroke: red !important;
+    stroke-width: 3px;
+}
+
+.lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    // height: 80px;
+}
+
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: 0px;
+    border-radius: 50%;
+    border: 6px solid #007AFF;
+    border-color: #007AFF transparent #007AFF transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.btn_size::after {
+    animation: lds-dual-ring 1.2s linear infinite;
+    width: 20px !important;
+    height: 20px !important;
+    border: 2px solid #fff;
+    border-color: #fff transparent #007AFF transparent;
+    margin: 5px auto 0;
+}
+
+.headerLeftSide {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    width: 100%;
+    max-width: 30%;
+    padding-left: 10px;
+}

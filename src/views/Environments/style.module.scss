@@ -1,0 +1,29 @@
+.colorpicker {
+    border-radius: 6px;
+    display: flex;
+    column-gap: 8px;
+    align-items: center;
+    width: 100%;
+
+    &>div:first-child {
+        width: 35px;
+        border-radius: 30px;
+
+        &::after {
+            display: none;
+        }
+
+        &::before {
+            display: none;
+        }
+
+        input {
+            height: 40px;
+            width: 40px;
+        }
+    }
+
+
+
+
+}

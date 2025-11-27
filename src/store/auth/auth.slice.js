@@ -1,4 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
+// import { listToMap } from "../../utils/listToMap";
 
 const initialState = {
   isAuth: false,
@@ -15,7 +16,6 @@ const initialState = {
   resourceId: "",
   after_login: false,
   environment_ids: [],
-  currencies: [],
   access_type: "",
   user_data: null,
 };
@@ -39,11 +39,12 @@ export const {actions: authActions, reducer: authReducer} = createSlice({
       state.resourceId = payload.resource_id;
       state.globalPermissions = payload.global_permission;
       state.environment_ids = payload.environment_ids;
-      state.currencies = payload.currencies;
+      // state.permissions = listToMap(payload.permissions?.map(el => ({...el, name: el.name?.replace('ROOT/', '')})), "name")
 
       state.permissions = payload?.permissions
         ? payload?.permissions?.reduce((acc, curr) => {
             acc[curr.table_slug] = {
+              // there is 3 cases ['Yes', 'No', 'Dynamic (Connection name)']
               read: curr.read !== "No",
               write: curr.write !== "No",
               update: curr.update !== "No",

@@ -1,0 +1,48 @@
+.repeatedBlock {
+  padding: 8px;
+
+  .items {
+    display: flex;
+    gap: 8px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    margin-bottom: 8px;
+    .item {
+      padding: 8px;
+      width: calc(33% - 3px);
+      border: 1px solid #e3e3e3;
+      border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .fields {
+        &.border {
+          padding: 8px;
+          border-radius: 2px;
+          border: 1px solid #e3e3e3;
+        }
+      }
+      button {
+        width: 100%;
+      }
+      .emptyBlock {
+        display: block;
+        padding: 8px 0;
+        width: 100%;
+        text-align: center;
+        svg {
+          margin-inline: auto;
+          width: 25px;
+          height: 25px;
+          path {
+            fill: #6e8bb7;
+          }
+        }
+        p {
+          font-size: 14px;
+          color: #6e8bb7;
+        }
+      }
+    }
+  }
+}

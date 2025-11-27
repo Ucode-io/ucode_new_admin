@@ -1,0 +1,244 @@
+.settingsBlock {
+  background-color: #fff;
+  width: 550px;
+  min-width: 550px;
+  background-color: #fff;
+  display: flex;
+
+  .additional {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    padding: 16px 8px;
+    row-gap: 5px;
+
+    .active {
+      justify-content: start;
+      color: #fff;
+      background: #007aff;
+    }
+
+    .inactive {
+      justify-content: start;
+      color: #656f7d;
+
+      &:hover {
+        color: #656f7d;
+        background: #f5f6fa;
+      }
+    }
+  }
+
+  .form {
+    width: 75%;
+  }
+
+  .settingsBlockHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+    padding: 16px;
+    padding-bottom: 0;
+  }
+
+  .settingsBlockBody {
+    height: calc(100vh - 56px - 56px);
+    overflow: auto;
+  }
+
+  .settingsFooter {
+    padding: 8px;
+    position: sticky;
+    bottom: 0;
+    background-color: #fff;
+  }
+}
+
+.summaryButton {
+  display: flex;
+  margin-top: 8px;
+
+  .button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border-radius: 6px;
+    flex-grow: 1;
+  }
+}
+
+.draggableRow {
+  border-bottom: 1px solid #e5e9eb;
+  padding: 0px 16px;
+  display: flex;
+  align-items: center;
+
+  .dragButton {
+    cursor: grab;
+  }
+
+  .label {
+    flex: 1;
+  }
+}
+
+// cascading_input
+.cascading_input {
+  width: 100%;
+  height: 35px;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  outline: none;
+  padding: 5px;
+}
+
+.cascading_collapse {
+  width: 400px;
+
+  .collapse_item {
+    padding-left: 5px;
+  }
+}
+
+.input_control {
+  position: relative;
+
+  .clear_btn {
+    background: none;
+    border: none;
+  }
+}
+
+.section {
+  border: 1px solid #e5e9eb;
+  border-radius: 6px;
+
+  .sectionHeader {
+    padding: 8px;
+    box-shadow: inset 0px -1px 0px #ebedee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f6f8f9;
+
+    .sectionTitle {
+      font-weight: 700;
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  .sectionBody {
+    padding: 16px 12px;
+
+    .formRow {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+  }
+}
+
+.settingsActionRelations {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: #f6f8f9;
+
+  .settingsBlockHeaders {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+    padding: 0 16px;
+    border-bottom: 1px solid #e5e9eb;
+    border-top: 1px solid #e5e9eb;
+    background-color: #f6f8f9;
+  }
+}
+
+.action_relations {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 10px 16px;
+}
+
+.settingsDefaultLimit {
+  display: flex;
+  flex-direction: column;
+  min-height: 48px;
+  padding: 10px 0px 0px 0px;
+  border-bottom: 1px solid #e5e9eb;
+  border-top: 1px solid #e5e9eb;
+  background-color: #f6f8f9;
+
+  h2 {
+    padding-left: 16px;
+    margin-bottom: 10px;
+  }
+
+  .default_limit {
+    background: #fff;
+    width: 100%;
+    padding: 10px 16px;
+  }
+}
+
+.selectedTab {
+  background-color: #007aff;
+  color: #fff;
+
+  svg {
+    color: #fff;
+  }
+}
+
+.cascadingButton {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+}
+
+.inputPart {
+  margin-bottom: 30px;
+}
+
+.customRow {
+  margin-bottom: 10px;
+
+  .customLabel {
+    h2 {
+      width: auto;
+      transform: translateY(0);
+      margin-bottom: 10px;
+      font-weight: bold;
+      line-height: 1.5;
+      font-size: 1rem;
+    }
+  }
+}
+
+.fieldSettingsForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.noShadow {
+  box-shadow: none !important;
+}

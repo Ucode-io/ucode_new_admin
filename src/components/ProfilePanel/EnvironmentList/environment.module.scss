@@ -1,0 +1,65 @@
+@use "/src/scss/colors";
+
+
+.environmentpaper {
+    margin-top: 5px;
+    margin-right: 10px;
+    left: 13% !important;
+}
+
+.environmentslist {
+    padding: 0 !important;
+
+    .block {
+        max-height: 350px;
+        overflow-y: auto;
+        padding: 8px;
+    }
+
+    .menuItem {
+        display: flex;
+        align-items: center;
+        padding: 8px;
+        min-width: 170px;
+        gap: 8px;
+        background-color: #fff;
+        cursor: pointer;
+        border-radius: 6px;
+
+
+        &.active {
+            color: #fff;
+            background-color: colors.$primary;
+
+            &:hover {
+                background: colors.$primary;
+            }
+        }
+
+        // &:hover {
+        //   background: #F6F8F9;
+        // }
+
+        .dragIcon {
+            cursor: grab;
+        }
+
+        .itemText {
+            flex: 1;
+            color: #747474;
+        }
+    }
+
+    .projectavatar {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #FFF;
+        font-size: 13px;
+        font-weight: 500;
+    }
+}

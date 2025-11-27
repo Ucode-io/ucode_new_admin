@@ -1,0 +1,64 @@
+.viewTypeList {
+  .wrapper {
+    display: flex;
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      gap: 8px;
+      padding: 16px;
+      border-right: 1px solid #e5e5e5;
+      button {
+        width: 100%;
+        text-align: left;
+        color: #a8a8a8;
+        display: flex;
+        justify-content: start;
+        padding: 8px 4px;
+
+        &.active {
+          color: #2d6ce5;
+          background: #2d6ce51a;
+        }
+      }
+    }
+
+    .right {
+      padding: 24px;
+
+      .img {
+        height: 200px;
+        width: 400px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      .text {
+        h3 {
+          font-size: 24px;
+          font-weight: 600;
+          margin-bottom: 8px;
+        }
+        p {
+          margin: 6px 0 12px 0;
+          font-size: 13px;
+          font-weight: 400;
+          line-height: 16px;
+          letter-spacing: 0em;
+          text-align: left;
+        }
+      }
+
+      .button {
+        button {
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+}

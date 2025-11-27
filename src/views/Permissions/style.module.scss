@@ -1,0 +1,33 @@
+.permission {
+    height: 100%;
+    overflow: hidden;
+
+    .wrapper {
+        padding: 0 !important;
+    }
+}
+
+.tabs {
+
+    ul {
+        border: none;
+        padding: 0 10px;
+    }
+}
+
+.role {
+    margin-top: 8px;
+}
+
+.head_row {
+    &:hover {
+        background: #eff8ff;
+    }
+}
+
+.sticky_header {
+    position: sticky;
+    background: #fff;
+    left: 0;
+    z-index: 99;
+}

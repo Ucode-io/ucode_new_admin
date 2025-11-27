@@ -1,0 +1,50 @@
+.reactTabs {
+  padding: 12px 5px;
+  margin: 0 12px;
+  list-style: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: #667085;
+}
+
+.reactTabs_tab--selected {
+  background-color: #449424 !important;
+  color: #449424;
+  border-bottom: 1px solid transparent;
+  display: none;
+}
+
+.moreButton {
+  background: none;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: #667085;
+  cursor: pointer;
+  margin: 0 10px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.tabSections {
+  margin-top: 10px;
+  background: #fff;
+  height: calc(100vh - 170px);
+  // overflow: auto;
+}
+
+.MuiAccordionSummary-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.MuiAccordionDetails-root {
+  display: flex;
+  flex-direction: column;
+  display: none !important;
+}

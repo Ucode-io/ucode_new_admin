@@ -1,0 +1,129 @@
+.FileUploadWithDrag {
+  box-sizing: border-box;
+  position: relative;
+  width: 500px;
+
+  .dropzone {
+    width: 100%;
+    cursor: pointer;
+    position: static;
+    height: 164px;
+    left: 0px;
+    top: 0px;
+    border: 1px dashed #d5dadd;
+    box-sizing: border-box;
+    border-radius: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &.error {
+      border: 1px dashed rgba(247, 102, 89, 1);
+    }
+
+    .dropzone-icon {
+      color: #6b6966;
+      font-size: 50px;
+    }
+
+    .dropzone-title {
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+      margin: 8px 0;
+      color: #6b6966;
+    }
+
+    .button {
+      .btn-title {
+        font-family: Inter;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: -0.006em;
+        text-align: center;
+      }
+    }
+  }
+}
+.close-btn {
+  z-index: 1;
+}
+
+.lock_icon {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.uploadedImage {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  .img {
+    min-width: 25px;
+    height: 35px;
+    max-width: 200px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  p {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+.uploadedFile {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  p {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+.removeImg {
+  border: none;
+  padding: 0 15px 0 8px;
+  color: #007aff;
+
+  &:hover {
+    background: rgba(0, 122, 255, 0.08);
+  }
+}
+
+.uploadedImage {
+  max-width: 100%;
+  max-height: 550px;
+  object-fit: cover;
+}
+
+.OneCUploadedImage {
+  max-width: 100%;
+  max-height: 550px;
+  object-fit: cover;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  .img {
+    min-width: 50px;
+    height: 35px;
+    max-width: 200px;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  p {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

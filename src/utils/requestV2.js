@@ -46,6 +46,7 @@ const errorHandler = (error, hooks) => {
       .then((res) => {
         store.dispatch(authActions.setTokens(res));
         store.dispatch(authActions.setPermission(res));
+        window.location.reload();
         return requestV2(originalRequest);
       })
       .catch((err) => {
@@ -65,22 +66,16 @@ const errorHandler = (error, hooks) => {
         }
       }
       if (error?.response?.status === 403) {
-        // store.dispatch(authActions.logout());
+        store.dispatch(authActions.logout());
         // store.dispatch(logoutAction(logoutParams)).unwrap().catch()
       }
+    } else {
+      console.log("ERRRRR =>", error);
+      // isOnline?.isOnline &&
+      store.dispatch(showAlert("No connection to the server, try again"));
     }
-    // isOnline?.isOnline &&
-    else store.dispatch(showAlert("No connection to the server, try again"));
 
     return Promise.reject(error.response);
-  }
-};
-
-const customMessageHandler = (res) => {
-  if (res.data.custom_message?.length && res.status < 400) {
-    store.dispatch(showAlert(res.data.custom_message, "success"));
-  } else if (res.data.custom_message?.length) {
-    store.dispatch(showAlert(res.data.custom_message, "error"));
   }
 };
 
@@ -98,24 +93,24 @@ requestV2.interceptors.request.use(
       config.headers["environment-id"] = environmentId;
       config.headers["resource-id"] = resourceId;
     }
-    if (!config.params?.["project-id"]) {
-      if (config.params) {
-        config.params["project-id"] = projectId;
-      } else {
-        config.params = {
-          "project-id": projectId,
-        };
-      }
-    }
+    // if (!config.params?.["project-id"]) {
+    //   if (config.params) {
+    //     config.params["project-id"] = projectId;
+    //   } else {
+    //     config.params = {
+    //       "project-id": projectId,
+    //     };
+    //   }
+    // }
     return config;
   },
 
   (error) => errorHandler(error)
 );
 
-requestV2.interceptors.response.use((response) => {
-  customMessageHandler(response);
-  return response.data.data;
-}, errorHandler);
+requestV2.interceptors.response.use(
+  (response) => response.data.data,
+  errorHandler
+);
 
 export default requestV2;

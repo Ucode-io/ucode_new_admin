@@ -1,0 +1,25 @@
+.saveComponent {
+  width: 100%;
+  height: calc(100vh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .cloud {
+    background-image: url("../../../public/img/internetBack.svg");
+    background-repeat: no-repeat;
+    width: 560px;
+    height: 445px;
+  }
+
+  h1 {
+    font-size: 20px;
+    margin-top: 30px;
+  }
+
+  p {
+    color: #999;
+    margin-top: 16px;
+  }
+}

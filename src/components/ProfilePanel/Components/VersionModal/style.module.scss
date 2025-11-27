@@ -1,0 +1,41 @@
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    position: relative;
+    border-radius: 8px;
+
+    &:hover {
+        background-color: #e5e9eb64;
+    }
+
+    &.active {
+        background-color: #E5F2FF;
+    }
+
+    .title {
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .subtitle {
+        color: #9AA6AC;
+        font-size: 14px;
+    }
+
+    .currentVersion {
+        position: absolute;
+        left: 50%;
+        top: 40%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        align-items: center;
+        column-gap: 6px;
+    }
+
+    .closeButton {
+        padding: 0;
+        background: none;
+    }
+}

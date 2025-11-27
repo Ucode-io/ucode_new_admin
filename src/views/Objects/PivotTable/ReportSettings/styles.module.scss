@@ -1,0 +1,192 @@
+.outerWrapper {
+  margin: 8px;
+  .listWrapper {
+    background-color: #fff;
+    height: calc(100vh - 56px);
+    .listHead {
+      border-bottom: 1px solid #eee;
+      padding: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      p {
+        font-weight: 700;
+        font-size: 16px;
+      }
+    }
+  }
+  .goBack {
+    padding: 8px;
+    background-color: #fff;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    height: 32px;
+    &:hover {
+      height: 40px;
+      font-weight: 700;
+      background-color: #dff2ff;
+    }
+  }
+  .reportItems {
+    padding: 8px;
+    display: flex;
+    gap: 4px;
+  }
+  .reportItem {
+    border: 1px solid #eee;
+    height: fit-content;
+    border-radius: 2px;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(33% - 2px);
+    cursor: pointer;
+    svg path {
+      fill: #6e8bb7;
+    }
+    &:hover {
+      border-color: #333;
+    }
+  }
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 56px);
+  position: relative;
+  .settings {
+    position: relative;
+    border-radius: 8px;
+    flex-grow: 1;
+    background-color: #fff;
+    .tabsHead {
+      position: sticky;
+      top: 0;
+      background-color: #fff;
+      z-index: 100;
+    }
+  }
+  .footer {
+    position: sticky;
+    bottom: 0;
+  }
+  .mainBlock {
+    padding: 8px;
+    .select {
+      width: 30%;
+    }
+    .title {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+  }
+  .repeatedBlock {
+    padding: 0 8px;
+    .items {
+      position: relative;
+      height: 100%;
+      .addButton {
+        padding: 8px;
+        background-color: #fff;
+        margin-top: 8px;
+        border: 1px solid #e3e3e3;
+        border-radius: 2px;
+      }
+      .item {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #e3e3e3;
+        padding: 8px;
+        border-radius: 2px;
+        position: relative;
+        .expand {
+          display: flex;
+          gap: 8px;
+          align-items: center;
+          div {
+            margin-bottom: 10px;
+          }
+        }
+        .objects {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+        }
+        .footerBtns {
+          display: flex;
+          gap: 8px;
+          button {
+            width: 50%;
+            margin-top: 8px;
+          }
+        }
+        .form {
+          &.values {
+            border: 1px solid #e3e3e3; // change this
+            padding: 8px;
+            gap: 0;
+            border-radius: 2px;
+            flex-direction: column;
+          }
+        }
+        .select {
+          width: 30%;
+          display: flex;
+          gap: 8px;
+        }
+        .fields {
+          border: 1px solid #e3e3e3;
+          padding: 8px;
+          width: 100%;
+          border-radius: 2px;
+          display: flex;
+          gap: 4px;
+          flex-wrap: wrap;
+          .loader {
+            margin-inline: auto;
+          }
+          .emptyBlock {
+            display: block;
+            padding: 20px 0;
+            width: 100%;
+            text-align: center;
+            svg {
+              margin-inline: auto;
+              width: 50px;
+              height: 50px;
+              path {
+                fill: #6e8bb7;
+              }
+            }
+            p {
+              font-size: 16px;
+              color: #6e8bb7;
+            }
+          }
+          .field {
+            cursor: pointer;
+            background-color: #f0f0f0;
+            border: 1px solid #e3e3e3;
+            border-radius: 2px;
+            padding: 4px 8px 4px 0;
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+          }
+        }
+        margin: 12px 0 0;
+      }
+    }
+  }
+}

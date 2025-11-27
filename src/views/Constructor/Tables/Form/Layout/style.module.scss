@@ -1,0 +1,551 @@
+@use "/src/scss/colors";
+
+.page {
+  display: flex;
+  background-color: #fff;
+  border-left: 1px solid #e5e9eb;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 4;
+  height: 100vh;
+}
+
+.sectionsBlock {
+  height: calc(100vh - 56px - 56px);
+  overflow: auto;
+  min-width: 350px;
+  width: 350px;
+  padding: 0px 8px 8px 0px;
+
+  .sectionCard {
+    border-radius: 6px;
+    margin-bottom: 15px;
+    // min-width: 460px;
+
+    &.short {
+      min-width: 160px;
+    }
+
+    .sectionCardHeader {
+      box-shadow: inset 0px -1px 0px #e5e9eb;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      // background: #f6f8f9;
+
+      .sectionCardHeaderLeftSide {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+    }
+
+    .sectionCardBody {
+      padding: 16px;
+      display: flex;
+      gap: 60px;
+      width: 100%;
+
+      .sectionCardRow {
+        background-color: #fff;
+        cursor: grab;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        .deleteButton {
+          transform: translateY(10px);
+        }
+      }
+    }
+  }
+
+  .sectionCreateCard {
+    padding: 16px;
+
+    .sectionCreateButton {
+      width: 100%;
+      border-radius: 6px;
+      border: 1px dashed rgba(110, 139, 183, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      font-size: 16px;
+      line-height: 24px;
+      color: colors.$primary;
+      cursor: pointer;
+      font-weight: 500;
+
+      &:hover {
+        border-color: colors.$primary;
+      }
+    }
+  }
+}
+
+.relationsBlock {
+  overflow: hidden;
+  padding: 0px 8px 8px 8px;
+  flex: 1;
+
+  .cardHeader {
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    gap: 10px;
+    border-bottom: 1px solid #e5e9eb;
+    min-height: 55px;
+    overflow-x: auto;
+
+    .tabList {
+      // max-width: 750px;
+      overflow: auto;
+      display: flex;
+      align-items: center;
+
+      .tab {
+        padding: 8px 12px;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        white-space: nowrap;
+        cursor: grab;
+        color: #6e8bb7;
+
+        &.active {
+          color: colors.$primary;
+
+          .tabLabelInput {
+            color: colors.$primary;
+          }
+        }
+      }
+    }
+  }
+
+  .cardBody {
+    padding: 8px;
+  }
+}
+
+.settingsBlock {
+  width: 475px;
+  min-width: 450px;
+  background-color: #fff;
+  border-left: 1px solid #e5e9eb;
+  position: absolute;
+  height: calc(100vh - 20px);
+  top: 0;
+  right: 0;
+  z-index: 4;
+  overflow: hidden;
+
+  .settingsBlockHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+    padding: 0 16px;
+    border-bottom: 1px solid #e5e9eb;
+    border-top: 1px solid #e5e9eb;
+    background-color: #f6f8f9;
+  }
+
+  .settingsBlockBody {
+    height: calc(100vh);
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.fieldsBlock {
+  // height: calc(100vh);
+  height: 680px;
+  overflow: auto;
+  padding: 8px;
+
+  .sectionFieldRow {
+    width: 100%;
+    padding: 8px 16px;
+    border: 1px dashed colors.$grey;
+    border-radius: 6px;
+    margin: 10px 0;
+    cursor: grab;
+    background-color: #fff;
+
+    &.relation {
+      width: fit-content;
+    }
+  }
+}
+
+.settingsFooter {
+  padding: 8px;
+  position: sticky;
+  bottom: 0;
+  background-color: #fff;
+}
+
+.draggableRow {
+  border-bottom: 1px solid #e5e9eb;
+  padding: 0px 16px;
+  display: flex;
+  align-items: center;
+
+  .dragButton {
+    cursor: grab;
+  }
+
+  .label {
+    flex: 1;
+  }
+}
+
+// <-- Summary Section --> //
+.summary_section_layer {
+  min-height: 10px !important;
+}
+
+.summarySection {
+  height: 100px;
+  min-width: 100%;
+  // max-width: 470px;
+  border-radius: 4px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  background: #fff;
+  display: flex;
+  border-bottom: 1px solid #eee;
+  padding: 5px 16px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .field_summary {
+    width: 200px;
+    height: 100% !important;
+    display: flex;
+    overflow: hidden;
+    border-radius: 4px;
+    margin-right: 5px;
+    background: #fff;
+  }
+
+  .field_summary_item {
+    width: 150px;
+    height: 40px;
+    max-height: 130px !important;
+    margin-top: 8px;
+    background: #fff;
+    font-size: 10px !important;
+    line-height: 16px;
+    font-weight: 700;
+    color: #000;
+    text-transform: uppercase;
+    position: relative;
+
+    .label {
+      margin-bottom: 0px !important;
+      height: 16px;
+      display: none !important;
+    }
+
+    input {
+      display: block;
+      font-size: 12px;
+      line-height: 20px;
+      font-weight: 600;
+      color: #9aa6ac;
+      background: none;
+      text-transform: initial;
+      width: 100%;
+      border: none !important;
+      outline: none;
+      height: 30px !important;
+    }
+  }
+}
+
+.summaySectionTitle {
+  display: flex;
+  padding-top: 10px;
+  margin-right: 12px;
+
+  h2 {
+    margin-left: 12px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    min-width: 200px;
+  }
+
+  span {
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    margin-top: 5px;
+  }
+}
+
+.tabs_section {
+  background: #fff;
+  padding: 5px 0 0;
+}
+
+.tabs {
+  padding: 5px 10px;
+}
+
+.tabs_item {
+  padding: 10px;
+  list-style-type: none;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #5b6871;
+  margin: 0 5px;
+}
+
+.newsectionsBlock {
+  min-height: 40px;
+  min-width: 350px;
+  padding: 0px 8px 0px 0px;
+
+  .newsectionCard {
+    border-radius: 6px;
+    // margin-bottom: 15px;
+    display: flex;
+
+    &.short {
+      min-width: 160px;
+    }
+
+    .newsectionCardHeader {
+      // box-shadow: inset 0px -1px 0px #e5e9eb;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      // background: #f6f8f9;
+
+      .newsectionCardHeaderLeftSide {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        position: relative;
+      }
+    }
+
+    .newsectionCardBody {
+      width: calc(100% - 150px);
+      overflow-x: scroll;
+      padding: 10px 16px 16px;
+      gap: 60px;
+      // width: 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .newsectionCardRow {
+        background-color: #fff;
+        cursor: grab;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 5px;
+        margin: 0 10px;
+
+        .deleteButton {
+          transform: translateY(10px);
+        }
+      }
+    }
+  }
+
+  .newsectionCreateCard {
+    padding: 16px;
+
+    .newsectionCreateButton {
+      width: 100%;
+      border-radius: 6px;
+      border: 1px dashed rgba(110, 139, 183, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      font-size: 16px;
+      line-height: 24px;
+      color: colors.$primary;
+      cursor: pointer;
+      font-weight: 500;
+
+      &:hover {
+        border-color: colors.$primary;
+      }
+    }
+  }
+}
+
+.newSectionDelete {
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addBtn {
+  height: 40px;
+  width: 40px;
+  margin-left: 10px;
+}
+
+.tabInput {
+  width: 120px;
+  cursor: pointer;
+
+  fieldset {
+    display: none;
+  }
+}
+
+.tabs_section {
+  background: #fff;
+  padding: 5px 0 0;
+  width: 100%;
+}
+
+.tabs {
+  padding: 5px 10px;
+}
+
+.tabs_item {
+  padding: 10px;
+  list-style-type: none;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #5b6871;
+  margin: 0 5px;
+}
+
+.tabsItem {
+  padding: 5px;
+  padding-left: 13px;
+  list-style-type: none;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #5b6871 !important;
+  // margin: 5px;
+  border-bottom: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+
+  &.active {
+    background-color: rgba(14, 115, 246, 0.1490196078);
+    color: #1890ff !important;
+  }
+}
+
+.sections_wrapper {
+  height: calc(100vh - 270px);
+  overflow: auto;
+}
+
+.countBtn {
+  position: absolute;
+  right: 5px;
+  background: #fff;
+  border: none;
+  top: 8px;
+  cursor: pointer;
+}
+
+.tableSectionTable {
+  display: flex;
+  align-items: center;
+  .deleteButtonSection {
+  }
+}
+
+.draggableContainer {
+  margin-bottom: 12px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.draggableContainer:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.relationTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  table-layout: auto;
+}
+
+.relationTable thead {
+  background-color: #f8f8f8;
+  color: #333;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.relationTable th,
+.relationTable td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 14px;
+  color: #333;
+}
+
+.relationTable th {
+  font-weight: bold;
+}
+
+.relationTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.relationTable th:first-child,
+.relationTable td:first-child {
+  border-right: 1px solid #e0e0e0;
+}
+
+.relationTable tr:hover td {
+  background-color: #f5f5f5;
+}
+
+.relationTable th,
+.relationTable td {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}

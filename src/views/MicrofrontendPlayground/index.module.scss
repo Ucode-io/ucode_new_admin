@@ -1,0 +1,17 @@
+
+
+
+.form {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid #D4DAE2;
+}
+
+.playground {
+  width: 100%;
+  height: calc(100vh - 77px);
+  background-color: #fff;
+  overflow: auto;
+}

@@ -1,0 +1,112 @@
+.formSection {
+  flex: 1;
+
+  .formFooter {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 5px;
+    border-top: 1px solid #e5e9eb;
+    border-left: 1px solid #e5e9eb;
+    border-radius: 6px;
+    gap: 5px;
+  }
+
+  .viewForm {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: calc(100vh - 200px);
+    overflow: auto;
+
+    .section {
+      border: 0;
+      border-radius: 0;
+
+      .sectionHeader {
+        padding: 16px 12px;
+        box-shadow: inset 0px -1px 0px #ebedee;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .sectionTitle {
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 24px;
+        }
+      }
+
+      .sectionBody {
+        padding: 16px 12px;
+
+        .formRow {
+          display: flex;
+          align-items: center;
+          gap: 30px;
+
+          fieldset {
+            border-radius: 6px;
+          }
+        }
+      }
+    }
+  }
+
+  .OneCviewForm {
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: calc(100vh - 400px);
+    overflow: auto;
+
+    .section {
+      border: 0;
+      border-radius: 0;
+
+      .sectionHeader {
+        padding: 16px 12px;
+        box-shadow: inset 0px -1px 0px #ebedee;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .sectionTitle {
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 24px;
+        }
+      }
+
+      .sectionBody {
+        padding: 16px 12px;
+
+        .formRow {
+          display: flex;
+          align-items: center;
+          gap: 30px;
+
+          fieldset {
+            border-radius: 6px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.addBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 200px;
+  height: 35px;
+  background: #449424;
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  margin: 15px 0 20px 0;
+}

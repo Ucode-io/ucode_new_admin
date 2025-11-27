@@ -1,10 +1,21 @@
 import {InputAdornment, TextField, Tooltip} from "@mui/material";
+import {makeStyles} from "@mui/styles";
 import {Controller} from "react-hook-form";
 import {numberWithSpaces} from "@/utils/formatNumbers";
+import {Lock} from "@mui/icons-material";
 import {useEffect} from "react";
 import {useLocation} from "react-router-dom";
 
-const HFTextFieldLogin = ({
+const useStyles = makeStyles((theme) => ({
+  input: {
+    padding: "0px",
+    "&::placeholder": {
+      color: "#fff",
+    },
+  },
+}));
+
+const HFTextField = ({
   control,
   name = "",
   isFormEdit = false,
@@ -17,14 +28,13 @@ const HFTextFieldLogin = ({
   withTrim = false,
   rules = {},
   defaultValue = "",
-  disabled = false,
+  disabled,
   tabIndex,
   checkRequiredField,
   placeholder,
   endAdornment,
   field,
-  type = "text",
-  inputHeight = "46px",
+  inputHeight,
   watch,
   disabled_text = "This field is disabled for this role!",
   setFormValue,
@@ -32,6 +42,7 @@ const HFTextFieldLogin = ({
   ...props
 }) => {
   const location = useLocation();
+  const classes = useStyles();
   useEffect(() => {
     if (
       location.pathname?.includes("create") &&
@@ -47,7 +58,7 @@ const HFTextFieldLogin = ({
       name={name}
       defaultValue={defaultValue}
       rules={{
-        required: true ? "This is required field" : false,
+        required: required ? "This is required field" : false,
         ...rules,
       }}
       render={({field: {onChange, value}, fieldState: {error}}) => {
@@ -66,45 +77,27 @@ const HFTextFieldLogin = ({
               customOnChange(e);
               isNewTableView && updateObject();
             }}
+            sx={{
+              width: "100%",
+              padding: "0px",
+              margin: "0px",
+            }}
             name={name}
             id={field?.slug ? `${field?.slug}_${name}` : `${name}`}
-            error={!!error}
-            type={type}
+            error={error}
             fullWidth={fullWidth}
             placeholder={placeholder}
-            // helperText={error?.message}
             autoFocus={tabIndex === 1}
             InputProps={{
-              endAdornment: error && (
-                <Tooltip title="This field is required">
-                  <InputAdornment position="start">
-                    <img src="/img/alert-circle.svg" height={"23px"} alt="" />
-                  </InputAdornment>
-                </Tooltip>
-              ),
-              ...props?.InputProps,
               readOnly: disabled,
-              inputProps: {
-                tabIndex,
-              },
-              sx: {
-                height: "46px",
-                "& .MuiInputBase-input": {
-                  padding: "12px 14px",
-                  height: "46px",
-                  boxSizing: "border-box",
-                  "&::placeholder": {
-                    color: "#667085",
-                  },
-                },
-                "&.Mui-focused": {
-                  backgroundColor: "transparent",
-                },
+              inputProps: {tabIndex, style: {height: inputHeight}},
+              classes: {
+                input: isBlackBg ? classes.input : "",
               },
               style: disabled
                 ? {
                     background: "#c0c0c039",
-                    padding: "0px !important",
+                    padding: "0px",
                   }
                 : isNewTableView
                   ? {
@@ -112,10 +105,23 @@ const HFTextFieldLogin = ({
                       color: "inherit",
                       padding: "0px !important",
                       margin: "0px !important",
+                      height: "25px",
                     }
                   : {},
+
+              endAdornment: disabled ? (
+                <Tooltip title={disabled_text}>
+                  <InputAdornment position="start">
+                    <Lock style={{fontSize: "20px"}} />
+                  </InputAdornment>
+                </Tooltip>
+              ) : (
+                endAdornment
+              ),
             }}
-            className="loginField"
+            helperText={!disabledHelperText && error?.message}
+            className={isFormEdit ? "custom_textfield" : ""}
+            {...props}
           />
         );
       }}
@@ -123,4 +129,4 @@ const HFTextFieldLogin = ({
   );
 };
 
-export default HFTextFieldLogin;
+export default HFTextField;

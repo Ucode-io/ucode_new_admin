@@ -1,0 +1,55 @@
+@use "/src/scss/colors";
+
+.wrapper {
+  display: flex;
+  background-color: #fff;
+  overflow: auto;
+
+  .filters {
+    padding: 8px;
+    border-right: 1px solid #e3e3e3;
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+    transition: 0.3s;
+
+    .block {
+      padding: 8px;
+      border-right: 0px solid #e3e3e3;
+
+      p {
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+    }
+  }
+
+  .table_box {
+    width: calc(100vw - 254px);
+  }
+}
+
+.filtersVisiblitiy {
+  padding: 0px;
+  width: 0px;
+  min-width: 0px;
+  max-width: 0px;
+  transition: 0.3s;
+
+  .block {
+    display: none;
+    padding: 0;
+
+    p {
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+  }
+}
+
+.add_filter {
+  transition: ease-in 0.1s all;
+  &:hover {
+    color: #2d6ce5;
+  }
+}

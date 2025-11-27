@@ -1,0 +1,15 @@
+.flex {
+    display: flex;
+    justify-content: center;
+}
+
+.input {
+    fieldset {
+        border: none;
+    }
+
+    input {
+        font-size: 18px;
+        font-weight: 700;
+    }
+}

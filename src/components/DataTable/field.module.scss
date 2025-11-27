@@ -1,0 +1,163 @@
+.headcell {
+  position: fixed;
+  right: 0;
+  width: 100%;
+  background: #fff;
+  max-width: 90px;
+  height: 100%;
+  min-height: 35px !important;
+  max-height: 35px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.field {
+  width: 100%;
+  min-width: 240px;
+  max-height: 500px;
+  overflow: scroll;
+  position: relative;
+
+  .advanced {
+    color: #4f5762 !important;
+    display: flex;
+    column-gap: 5px;
+
+    &:hover {
+      background: #f5f6fa;
+    }
+  }
+
+  .input {
+    fieldset {
+      border-radius: 6px;
+    }
+  }
+
+  .custom_label {
+    color: #656f7d;
+  }
+
+  .title {
+    // margin-top: 4px;
+    font-weight: 600;
+    color: #818193;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    pointer-events: none;
+    padding: 11px 15px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: sticky;
+    top: 0px;
+    left: 0;
+    z-index: 9999 !important;
+    background: #fff;
+  }
+
+  .button {
+    border-radius: 0;
+    display: flex;
+    justify-content: flex-start;
+    padding: 11px 15px;
+    height: 35px;
+    column-gap: 7px;
+
+    svg {
+      font-size: 14.5px;
+      line-height: 24px;
+      font-weight: 500;
+      color: #111;
+    }
+
+    p {
+      font-size: 14.5px;
+      line-height: 24px;
+      font-weight: 500;
+      color: #111;
+    }
+  }
+
+  .relation {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+
+  .button_group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 10px;
+    column-gap: 10px;
+  }
+
+  .dropdown {
+    .option {
+      display: flex;
+      flex-direction: column;
+      row-gap: 7px;
+      margin-bottom: 7px;
+      color: #656f7d;
+    }
+
+    .startAdornment {
+      width: 5px;
+      height: 35px;
+      display: block;
+      position: absolute;
+      left: -6px;
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
+    }
+
+    .adornment {
+      display: flex;
+      align-items: center;
+      column-gap: 5px;
+
+      p {
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 0.8;
+        text-wrap: nowrap;
+        color: #007aff;
+        cursor: pointer;
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .formula {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
+    margin-bottom: 10px;
+
+    .plus {
+      display: block;
+    }
+  }
+
+  .form {
+    padding: 15px 20px;
+
+    .field {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 500px;
+      width: 100%;
+      column-gap: 10px;
+    }
+  }
+}

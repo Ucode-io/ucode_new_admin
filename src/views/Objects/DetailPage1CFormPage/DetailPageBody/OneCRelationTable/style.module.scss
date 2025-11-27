@@ -1,0 +1,401 @@
+@mixin btn_style {
+  height: 38px;
+  border: none;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex_between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tableFilterBlock {
+  width: 100%;
+  padding: 12px 16px;
+  background: #fff;
+  position: sticky;
+  left: 0;
+  @include flex_between;
+
+  .searchFilter {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .filterBtn {
+      width: 38px;
+      height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      border: 1px solid #d0d5dd;
+      background: none;
+      cursor: pointer;
+      position: relative;
+
+      .filterBadge {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #449424;
+        border-radius: 50%;
+        top: -10px;
+        right: -10px;
+        z-index: 2;
+        background: #fff;
+        color: #449424;
+        font-size: 12px;
+        font-weight: 500;
+        @include flexCenter;
+        justify-content: center;
+      }
+    }
+  }
+
+  .filterCreatBtns {
+    @include flexCenter;
+    gap: 12px;
+
+    .createBtn {
+      width: 94px;
+      @include btn_style;
+      background: #449424;
+      border: none;
+      color: #fff;
+    }
+
+    .createGroupBtn {
+      @include btn_style;
+      width: 142px;
+      background: none;
+      border: 1px solid #d0d5dd;
+    }
+    .moreBtn {
+      @include btn_style;
+      width: 40px;
+      border: 1px solid #d0d5dd;
+      background: none;
+    }
+  }
+}
+
+.filterList {
+  background: #fff;
+  padding: 10px 20px;
+  border-bottom: 1px solid #d0d5dd;
+  border-top: 1px solid #d0d5dd;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  .filterListItem {
+    height: 28px;
+    min-width: 66px;
+    @include flexCenter;
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+    padding: 4px 14px;
+    color: #344054;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+    justify-content: center;
+    gap: 5px;
+
+    .filteLabel {
+      font-size: 14px;
+      color: #344054;
+      font-weight: 500;
+    }
+  }
+
+  .filterListItemActive {
+    height: 28px;
+    min-width: 74px;
+    @include flexCenter;
+    border: 1px solid #d0d5dd;
+    border-radius: 36px;
+    padding: 4px 14px;
+    color: #344054;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+    justify-content: center;
+    gap: 8px;
+    background: #344054;
+    color: #fff;
+
+    .filteLabel {
+      font-size: 14px;
+      color: #eaecf0;
+    }
+
+    .filterCount {
+      color: #98a2b3;
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+}
+
+.columnsLoading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  @include flexCenter;
+  justify-content: center;
+}
+
+.tableComponent {
+  background: #fff;
+  height: calc(100vh - 288px);
+  overflow: auto;
+  background: #fff;
+}
+
+/////////Table
+.expandable_table {
+  width: 100%;
+  // min-width: 700px;
+  background: #fff;
+  border-collapse: collapse;
+  margin: 0 0;
+  overflow: auto;
+  table-layout: fixed;
+}
+
+.expandable_table thead th {
+  position: sticky;
+  top: 0;
+  font-weight: 500;
+  color: #475467;
+  font-size: 12px;
+  height: 46px;
+  width: 250px;
+}
+
+.expandable_table th,
+.expandable_table td {
+  border-top: 1px solid #eaecf0;
+  border-right: 1px solid #eaecf0;
+  border-bottom: 1px solid #eaecf0;
+  padding: 12px 16px;
+  text-align: left;
+  background: #fff;
+  width: 250px;
+  height: 35px !important;
+}
+
+.expandable_table th {
+  background-color: #f9fafb;
+  width: 250px;
+}
+
+.group_row {
+  cursor: pointer;
+}
+
+.child_row {
+  background-color: #f9f9f9;
+
+  p {
+    font-size: 12px;
+    font-weight: 400;
+    color: #475467;
+  }
+
+  td {
+    font-size: 12px;
+    font-weight: 400;
+    color: #475467;
+    height: 35px;
+  }
+}
+
+.folder_icon {
+  margin-right: 10px;
+}
+
+.item_icon {
+  margin-right: 10px;
+}
+
+.toggle_btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.td_row {
+  display: flex;
+  align-items: center;
+
+  p {
+    font-size: 12px;
+    font-weight: 400;
+    color: #475467;
+  }
+}
+
+.childTd {
+  margin-left: 30px;
+  display: flex;
+  gap: 12px;
+  height: 35px !important;
+}
+
+.tableHeaditem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.tableWrapper {
+  height: calc(100vh - 260px);
+  background: #fff;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.tableWrapperActive {
+  height: calc(100vh - 320px);
+  background: #fff;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.tableComponent {
+  background: #fff;
+}
+
+.tableFooter {
+  border-top: 1px solid #eaecf0;
+  width: 100%;
+  background: #fff;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+
+  .limitSide {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #6e7c87;
+    padding-left: 8px;
+    width: 150px;
+  }
+
+  .selectLimit {
+    min-width: 100px;
+    display: flex;
+    align-items: center;
+
+    p {
+      font-size: 12px;
+      font-weight: 600;
+      color: #344054;
+    }
+  }
+
+  .limitSide {
+    width: 70px;
+  }
+
+  .cpagination {
+    min-width: 250px;
+
+    .paginationBtn {
+      width: 80px;
+      height: 40px;
+      border-radius: 8px;
+      background: none;
+      border: 1px solid #d0d5dd;
+      margin: 0 10px;
+      font-weight: 600;
+      font-size: 12px;
+      color: #344054;
+      cursor: pointer;
+    }
+  }
+}
+
+.back_row {
+  cursor: pointer;
+  width: 200px !important;
+
+  td {
+    display: flex;
+    position: sticky;
+    left: 0;
+    border: none !important;
+  }
+}
+
+.back_btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 20px;
+}
+
+.back_btn img {
+  margin-right: 5px;
+}
+
+.td_row {
+  display: flex;
+  align-items: center;
+}
+
+.childTd {
+  display: flex;
+  align-items: center;
+}
+
+.toggle_btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.folder_icon img {
+  margin-right: 5px;
+}
+.current_folder_name {
+  display: flex;
+  align-items: center;
+
+  .folder_icon {
+    margin-right: 2px;
+  }
+}

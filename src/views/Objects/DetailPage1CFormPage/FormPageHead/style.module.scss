@@ -1,0 +1,77 @@
+@mixin btn {
+  border: 1px solid #d0d5dd;
+  background: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  height: 38px;
+}
+
+@mixin flex_center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tableUiHead {
+  padding: 16px 18px;
+  background: #fff;
+}
+
+.tableHeadTitle {
+  padding: 14px 16px 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h2 {
+    color: #101828;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .tableHeadLinks {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .headRegisterClose {
+      width: 100px;
+      background-color: #449424;
+      border-radius: 8px;
+      border: none;
+      color: #fff;
+      font-weight: 600;
+      font-size: 14px;
+      height: 38px;
+      cursor: pointer;
+      @include flex_center;
+    }
+
+    .headRegister {
+      width: 100px;
+      @include btn;
+      @include flex_center;
+    }
+
+    .headMore {
+      width: 38px;
+      @include btn;
+      @include flex_center;
+    }
+  }
+}
+
+.tabBackBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  button {
+    background: none;
+    border: none;
+    @include flex_center;
+    cursor: pointer;
+  }
+}

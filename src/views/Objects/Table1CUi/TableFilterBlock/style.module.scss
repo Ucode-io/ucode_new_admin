@@ -1,0 +1,316 @@
+@mixin btn_style {
+  height: 38px;
+  border: none;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex_between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tableFilterBlock {
+  width: 100%;
+  padding: 12px 16px;
+  background: #fff;
+  @include flex_between;
+
+  .searchFilter {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .filterBtn {
+      width: 38px;
+      height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      border: 1px solid #d0d5dd;
+      background: none;
+      cursor: pointer;
+      position: relative;
+
+      .filterBadge {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #449424;
+        border-radius: 50%;
+        top: -10px;
+        right: -10px;
+        z-index: 2;
+        background: #fff;
+        color: #449424;
+        font-size: 12px;
+        font-weight: 500;
+        @include flexCenter;
+        justify-content: center;
+      }
+    }
+  }
+
+  .filterCreatBtns {
+    @include flexCenter;
+    gap: 12px;
+
+    .createBtn {
+      width: 94px;
+      @include btn_style;
+      background: #449424;
+      border: none;
+      color: #fff;
+    }
+
+    .createGroupBtn {
+      @include btn_style;
+      width: 142px;
+      background: none;
+      border: 1px solid #d0d5dd;
+    }
+    .moreBtn {
+      @include btn_style;
+      width: 40px;
+      border: 1px solid #d0d5dd;
+      background: none;
+    }
+  }
+}
+
+.filterList {
+  background: #fff;
+  padding: 10px 20px;
+  border-bottom: 1px solid #d0d5dd;
+  border-top: 1px solid #d0d5dd;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  .filterListItem {
+    height: 28px;
+    min-width: 66px;
+    @include flexCenter;
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+    padding: 4px 14px;
+    color: #344054;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+    justify-content: center;
+    gap: 5px;
+
+    .filteLabel {
+      font-size: 14px;
+      color: #344054;
+      font-weight: 500;
+    }
+  }
+
+  .filterListItemActive {
+    height: 28px;
+    min-width: 74px;
+    @include flexCenter;
+    border: 1px solid #d0d5dd;
+    border-radius: 36px;
+    padding: 4px 14px;
+    color: #344054;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+    justify-content: center;
+    gap: 8px;
+    background: #344054;
+    color: #fff;
+
+    .filteLabel {
+      font-size: 14px;
+      color: #eaecf0;
+    }
+
+    .filterCount {
+      color: #98a2b3;
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+}
+
+.closeBtn {
+  background: none;
+  border: none;
+  @include flexCenter;
+  cursor: pointer;
+}
+
+.groupHead {
+  font-weight: 600;
+  font-size: 18px;
+  color: #101828;
+}
+
+.groupLabel {
+  p {
+    font-weight: 500;
+    font-size: 12px;
+    color: #344054;
+    margin-bottom: 6px;
+  }
+}
+
+.groupdTextArea {
+  position: relative;
+  width: 592px;
+  // height: 140px;
+  // border: 1px solid #000;
+}
+
+.moreBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 98px;
+  height: 44px;
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #d0d5dd;
+  gap: 8px;
+  cursor: pointer;
+
+  span {
+    font-size: 16px;
+    font-weight: 600;
+  }
+}
+
+.actionBtns {
+  display: flex;
+  gap: 12px;
+
+  .actionRegBtn {
+    width: 111px;
+    height: 44px;
+    background: none;
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    color: #344054;
+  }
+
+  .actionCloseBtn {
+    width: 196px;
+    height: 44px;
+    background: #449424;
+    border: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+}
+
+.addFilter {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.searchBtn {
+  width: 40px;
+  height: 44px;
+  background: none;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #eee;
+}
+
+.filterListItem,
+.filterListItemActive {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // margin-bottom: 8px;
+}
+
+.addFilter {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.filterListItemActive .filterLabel {
+  font-weight: bold;
+}
+
+.filterListItemActive .filterCount {
+  margin-left: 8px;
+}
+
+.menu {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 326px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+.searchBtn {
+  background: none;
+  border: none;
+  // margin-right: 8px;
+  cursor: pointer;
+}
+
+.menuItems {
+  height: 165px;
+  overflow-y: auto;
+}
+
+.menuItem {
+  padding: 10px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #101828;
+}
+
+.menuItem:hover {
+  background-color: #f0f0f0;
+}
+
+.columnsLoading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  @include flexCenter;
+  justify-content: center;
+}

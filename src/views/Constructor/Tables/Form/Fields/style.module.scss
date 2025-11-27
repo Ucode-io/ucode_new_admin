@@ -1,0 +1,124 @@
+@use "/src/scss/colors";
+
+.createButton {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px dashed rgba(110, 139, 183, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &:hover {
+    border-color: colors.$primary;
+  }
+
+  p {
+    color: colors.$primary;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+}
+
+.formrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 8px;
+}
+
+.input {
+
+  fieldset {
+    border-radius: 6px;
+  }
+}
+
+.title {
+  color: #2a2e34;
+  margin-bottom: 10px;
+}
+
+.validation {
+  color: #2a2e34;
+  padding: 4px 8px 4px 0;
+  border-radius: 6px;
+  transition: .3s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.custom_label {
+  color: #656f7d;
+}
+
+.settingsBlock {
+  width: 550px;
+  min-width: 550px;
+  background-color: #fff;
+  border-left: 1px solid #E5E9EB;
+  display: flex;
+
+  .additional {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    padding: 16px 8px;
+    row-gap: 5px;
+
+    .active {
+      justify-content: start;
+      color: #fff;
+      background: #007AFF;
+    }
+
+    .inactive {
+      justify-content: start;
+      color: #656f7d;
+
+      &:hover {
+        color: #656f7d;
+        background: #F5F6FA;
+      }
+    }
+  }
+
+  .form {
+    width: 75%;
+  }
+
+  .settingsBlockHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+    padding: 0 16px;
+    border-top: 1px solid #E5E9EB;
+  }
+
+  .settingsBlockBody {
+    height: calc(100vh - 56px - 56px - 48px);
+    overflow: auto;
+  }
+
+  .settingsFooter {
+    padding: 8px;
+    position: sticky;
+    bottom: 0;
+    background-color: #fff;
+  }
+}
+
+.selectedTab {
+  background-color: #007AFF;
+  color: #fff;
+
+  svg {
+    color: #fff;
+  }
+}

@@ -1,0 +1,21 @@
+@keyframes colorChange {
+  0% {
+    color: #bcb7b7;
+  }
+  25% {
+    color: #5a5858;
+  }
+  50% {
+    color: #9b9b99;
+  }
+  75% {
+    color: #3f3d3d;
+  }
+  100% {
+    color: #757575;
+  }
+}
+
+.animated_text {
+  animation: colorChange 2s linear infinite;
+}

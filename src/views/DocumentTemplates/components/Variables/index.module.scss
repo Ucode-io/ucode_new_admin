@@ -1,0 +1,73 @@
+
+
+
+.block {
+
+  .title {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 16px;
+    border-bottom: 1px solid #EAECF0;
+  }
+
+
+  .list {
+    padding: 16px;
+    height: calc(100vh - 187px);
+    overflow: auto;
+
+    .row {
+      font-size: 14px;
+      line-height: 24px;
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      .copyButton {
+        margin-left: 10px;
+        opacity: 0;
+        transition-duration: 0.3s;
+      }
+
+      &:hover {
+        .copyButton {
+          opacity: 1;
+        }
+      }
+    }
+
+    .relation {
+      border-left: 2px solid #EAECF0;
+      padding-left: 15px;
+    }
+
+    .relationRow {
+      font-weight: bold;
+
+      .relationIcon {
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
+        // transform: rotate(90deg);
+      }
+
+      .dropDownIcon {
+        cursor: pointer;
+        transition-duration: 0.3s;
+        transform: rotate(-90deg);
+        transition-property: transform;
+        width: 30px;
+        height: 30px;
+        margin-left: -9px;
+
+        &.open {
+          transform: rotate(0);
+        }
+      }
+    }
+
+
+  }
+}

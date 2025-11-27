@@ -1,0 +1,18 @@
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  .MuiTextField-root {
+    width: 200px;
+  }
+
+  .MuiIconButton-root {
+    margin-right: 1rem;
+  }
+
+  .MuiButton-containedPrimary {
+    margin-right: 1rem;
+  }
+}

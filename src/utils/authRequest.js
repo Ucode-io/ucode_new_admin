@@ -27,9 +27,7 @@ const errorHandler = (error, hooks) => {
     } else if (error?.response?.status === 401) {
       // store.dispatch(logout())
     }
-  } else
-    isOnline?.isOnline &&
-      store.dispatch(showAlert("No connection to the server, try again"));
+  } else isOnline?.isOnline && store.dispatch(showAlert("No connection to the server, try again"));
 
   return Promise.reject(error.response);
 };

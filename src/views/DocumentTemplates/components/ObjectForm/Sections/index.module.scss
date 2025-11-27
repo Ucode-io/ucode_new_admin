@@ -1,0 +1,23 @@
+
+
+
+.section {
+  .sectinoHeader {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-bottom: 1px solid #EAECF0;
+    border-top: 1px solid #EAECF0;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .sectionBody {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 10px;
+  }
+}

@@ -1,0 +1,97 @@
+.icon_header {
+    width: 78px;
+    height: 78px;
+    display: flex;
+    flex-direction: column;
+    // padding-top: 14px;
+    padding-bottom: 2px;
+    border: 1px solid #E5E9EB;
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    word-wrap: break-word;
+    text-align: center;
+    transition: all 0.3s;
+
+    .icon_title {
+        font-size: 11px;
+        word-wrap: break-word;
+        padding: 4px 6px;
+
+    }
+
+    &:hover {
+        border: 1px solid rgb(163, 162, 162);
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+}
+
+.icon {
+    color: #007AFF;
+    width: 24px;
+    height: 24px;
+}
+
+.condition_node {
+    width: 200px;
+    height: 100%;
+    min-height: 73px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    // padding-top: 14px;
+    // padding-bottom: 2px;
+    border: 1px solid #E5E9EB;
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    word-wrap: break-word;
+    text-align: center;
+    transition: all 0.3s;
+
+    .handle {
+        padding: 10px 5px;
+        border-radius: 6px;
+        background-color: #E5E5E5;
+        width: 100%;
+        max-width: 160px !important;
+        min-height: 63px;
+        margin-top: 5px;
+        position: relative;
+    }
+}
+
+.default_node {
+    width: 78px;
+    height: 78px;
+    min-height: 73px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    // padding-top: 14px;
+    // padding-bottom: 2px;
+    border: 1px solid #E5E9EB;
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+    align-items: center;
+    word-wrap: break-word;
+    text-align: center;
+    transition: all 0.3s;
+
+    .handle {
+        padding: 10px 5px;
+        border-radius: 6px;
+        background-color: #E5E5E5;
+        width: 100%;
+        max-width: 160px !important;
+        min-height: 63px;
+        margin-top: 5px;
+        position: relative;
+    }
+
+    svg {
+        margin-left: 2px;
+        color: #007AFF;
+    }
+}

@@ -1,0 +1,120 @@
+@use "/src/scss/colors";
+
+.tableUiHead {
+  padding: 16px 18px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// tableHeadTitle
+.tableHeadTitle {
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h2 {
+    color: #101828;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .tableHeadLinks {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #337e28;
+      font-weight: 600;
+      font-size: 12px;
+    }
+  }
+}
+
+.selector {
+  display: flex;
+  overflow: hidden;
+  margin-left: 20px;
+
+  .element {
+    width: max-content;
+    height: 40px;
+    min-width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #449424;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    padding: 0 10px;
+    &.active {
+      color: colors.$primary;
+      background-color: #fff;
+      border-bottom: 1px solid #fff;
+    }
+
+    .icon {
+      margin-right: 6px;
+      color: #449424;
+    }
+
+    span {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0px;
+    }
+
+    &:hover .icon {
+      transform: scale(1.2);
+    }
+
+    &:hover .popoverElement {
+      display: block;
+    }
+
+    button {
+      border: none;
+      margin-left: 5px;
+      background: none;
+      color: #449424;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        background-color: #e5e9eb;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .addElement {
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #449424;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    padding: 0 10px;
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+  }
+}
+
+.modal {
+  z-index: 6 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

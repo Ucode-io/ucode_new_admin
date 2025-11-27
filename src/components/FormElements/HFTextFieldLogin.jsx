@@ -1,8 +1,19 @@
 import {InputAdornment, TextField, Tooltip} from "@mui/material";
+import {makeStyles} from "@mui/styles";
 import {Controller} from "react-hook-form";
 import {numberWithSpaces} from "@/utils/formatNumbers";
+import {Lock} from "@mui/icons-material";
 import {useEffect} from "react";
 import {useLocation} from "react-router-dom";
+
+const useStyles = makeStyles((theme) => ({
+  input: {
+    padding: "0px",
+    "&::placeholder": {
+      color: "#fff",
+    },
+  },
+}));
 
 const HFTextFieldLogin = ({
   control,
@@ -17,14 +28,13 @@ const HFTextFieldLogin = ({
   withTrim = false,
   rules = {},
   defaultValue = "",
-  disabled = false,
+  disabled,
   tabIndex,
   checkRequiredField,
   placeholder,
   endAdornment,
   field,
-  type = "text",
-  inputHeight = "46px",
+  inputHeight= '44px',
   watch,
   disabled_text = "This field is disabled for this role!",
   setFormValue,
@@ -32,6 +42,7 @@ const HFTextFieldLogin = ({
   ...props
 }) => {
   const location = useLocation();
+  const classes = useStyles();
   useEffect(() => {
     if (
       location.pathname?.includes("create") &&
@@ -47,13 +58,13 @@ const HFTextFieldLogin = ({
       name={name}
       defaultValue={defaultValue}
       rules={{
-        required: true ? "This is required field" : false,
+        required: required ? "This is required field" : false,
         ...rules,
       }}
       render={({field: {onChange, value}, fieldState: {error}}) => {
         return (
           <TextField
-            size="small"
+          size="small"
             value={value}
             onChange={(e) => {
               onChange(
@@ -66,42 +77,47 @@ const HFTextFieldLogin = ({
               customOnChange(e);
               isNewTableView && updateObject();
             }}
+
             name={name}
             id={field?.slug ? `${field?.slug}_${name}` : `${name}`}
-            error={!!error}
-            type={type}
+            error={error}
             fullWidth={fullWidth}
             placeholder={placeholder}
             autoFocus={tabIndex === 1}
             InputProps={{
-              endAdornment: error && (
-                <Tooltip title="This field is required">
+              readOnly: disabled,
+              inputProps: {tabIndex, style: {height: inputHeight}},
+              classes: {
+                input: {
+                    
+                }
+              },
+              style: disabled
+                ? {
+                    background: "#c0c0c039",
+                    padding: "0px",
+                  }
+                : isNewTableView
+                  ? {
+                      background: "inherit",
+                      color: "inherit",
+                      padding: "0px !important",
+                      margin: "0px !important",
+                    }
+                  : {},
+
+              endAdornment: disabled ? (
+                <Tooltip title={disabled_text}>
                   <InputAdornment position="start">
-                    <img src="/img/alert-circle.svg" height={"23px"} alt="" />
+                    <Lock style={{fontSize: "20px"}} />
                   </InputAdornment>
                 </Tooltip>
+              ) : (
+                endAdornment
               ),
-              ...props?.InputProps,
-              readOnly: disabled,
-              inputProps: {
-                tabIndex,
-              },
-              sx: {
-                height: "46px",
-                "& .MuiInputBase-input": {
-                  padding: "12px 14px",
-                  height: "46px",
-                  boxSizing: "border-box",
-                  "&::placeholder": {
-                    color: "#667085",
-                  },
-                },
-                "&.Mui-focused": {
-                  backgroundColor: "transparent",
-                },
-              },
             }}
             className="loginField"
+            {...props}
           />
         );
       }}
